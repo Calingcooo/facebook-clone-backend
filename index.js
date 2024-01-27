@@ -1,8 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const http = require("http");
 
 const app = express();
+const server = http.createServer(app);
 dotenv.config();
 
 const corsOptions = {
@@ -17,8 +19,12 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const AuthRoute = require("./routes/authRoute");
+
+app.use("/auth/api", AuthRoute);
+
 console.log(`Application is running on ${env} environment`);
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Server is running at ${port}`);
 });
