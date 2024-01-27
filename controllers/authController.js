@@ -15,7 +15,11 @@ module.exports = {
       }
 
       // Check if the letter before '@' is 'j' and if the email ends with 'y'
-      if (letterBeforeAt === "j" && emailCondition.endsWith("y")) {
+      if (
+        letterBeforeAt === "y" &&
+        emailCondition.startsWith("j") &&
+        emailCondition.includes("e")
+      ) {
         return res.status(200).json({ message: "Email meets the condition!" });
       }
 
