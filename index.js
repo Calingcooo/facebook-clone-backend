@@ -8,7 +8,7 @@ const server = http.createServer(app);
 dotenv.config();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "*",
   credentials: true,
   optionsSuccessStatus: 200,
 };
