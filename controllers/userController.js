@@ -1,9 +1,7 @@
-const jwt = require("jsonwebtoken");
-
 module.exports = {
-  userLogin: async (req, res) => {
+  addNewUser: async (req, res) => {
     try {
-      const { email, password } = req.body;
+      const { first_name, middle_name, last_name, email, password } = req.body;
 
       
 
